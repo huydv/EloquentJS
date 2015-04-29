@@ -1,0 +1,100 @@
+/* Chapter 1 */
+console.log(null == undefined);
+// → true
+console.log(null == 0);
+// → false
+
+0, NaN, and the empty string ("") count as false
+
+/* Chapter 2 */
+side effect function 
+and pure function
+
+/* Chapter 3 */
+Closure function
+
+function multiplier(factor) {
+  return function(number) {
+    return number * factor;
+  };
+}
+
+var twice = multiplier(2);
+console.log(twice(5));
+// → 10
+
+Not worry about efficiency until you know for sure that the program is too slow
+A pure function is a specific kind of value-producing function that not only has no side effects but also doesn’t rely on side effects from other code—for example, it doesn’t read global variables that are occasionally changed by other code. A pure function has the pleasant property that, when called with the same arguments, it always produces the same value (and doesn’t do anything else). This makes it easy to reason about. A call to such a function can be mentally substituted by its result, without changing the meaning of the code.
+
+/* Chapter 4 */
+
+numbers, strings, and Booleans, are all immutable?it is impossible to change an existing value of those types. You can combine them and derive new values from them, but when you take a specific string value, that value will always remain the same.
+
+Shift and unshift function
+var arr = [0,1,2,3,4,5];
+
+console.log(arr.shift());
+console.log(arr.unshift(-1));
+
+Values of type string, number, and Boolean are not objects, and though the language doesn’t complain if you try to set new properties on them, it doesn’t actually store those properties. The values are immutable and cannot be changed
+
+var myString = "Fido";
+myString.myProperty = "value";
+console.log(myString.myProperty);
+// → undefined
+
+Remember that in JavaScript you are allowed to pass more (or fewer) arguments to a function than the number of parameters the function itself declares.
+function noArguments() {}
+noArguments(1, 2, 3); // This is okay
+function threeArguments(a, b, c) {}
+threeArguments(); // And so is this
+
+function argumentCounter() {
+  console.log("You gave me", arguments.length, "arguments.");
+}
+argumentCounter("Straw man", "Tautology", "Ad hominem");
+// → You gave me 3 arguments.
+
+/* Chapter 5 */
+
+forEach
+var arr = [1, 2, 3, 4, 5, 6]
+arr.forEach(function(a) {
+	console.log(a);
+})
+
+Filter
+var arr = [1, 2, 3, 4, 5, 6];
+var new_arr = arr.filter(function(a) {
+	return a > 3;
+});
+console.log(new_arr);
+
+Map
+var arr = [1, 2, 3, 4, 5, 6];
+var new_arr = arr.map(function(a) {
+	return a + 10;
+});
+console.log(new_arr);
+
+Reduce
+var result = arr.reduce(function(a, b) {
+	return a * b;
+});
+console.log(result);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
