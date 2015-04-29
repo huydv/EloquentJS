@@ -22,7 +22,15 @@
 			console.log(prepend(10, prepend(20, null)));
 			console.log(nth(arrayToList([10, 20, 30]), 20));
 			
-			
+			console.log("every([NaN, NaN, NaN], isNaN): " + every([NaN, NaN, NaN], isNaN));
+			// → true
+			console.log("every([NaN, NaN, 4], isNaN): " + every([NaN, NaN, 4], isNaN));
+			// → false
+			console.log("some([NaN, 3, 4], isNaN): " + some([NaN, 3, 4], isNaN));
+			// → true
+			console.log("some([2, 3, 4], isNaN): " + some([2, 3, 4], isNaN));
+			// → false
+
 			console.log("Deep equal:");
 			var obj = {here: {is: "an"}, object: 2};
 			console.log(deepEqual(obj, obj));

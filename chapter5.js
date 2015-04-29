@@ -71,4 +71,26 @@
 	console.log(new_arrays);
 
 
+	function every(arr, func) {
+		var check = true;
+		for(var i = 0; i < arr.length; i++) {
+			if(! func(arr[i])) {
+				check = false;
+				break;
+			}
+		}
+		return check;
+	}
+
+	function some(arr, func) {
+		var check = false;
+		for(var i = 0; i < arr.length; i++) {
+			if(func(arr[i])) {
+				check = true;
+				break;
+			}
+		}
+		return check;
+	}
+
 
